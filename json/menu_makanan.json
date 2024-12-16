@@ -1,0 +1,83 @@
+[
+  {
+    "idMenu": 1,
+    "idKantin": 1,
+    "namaMakanan": "Nasi Goreng",
+    "hargaMakanan": 25000,
+    "deskripsiMenu": "Nasi goreng dengan ayam, sayuran, dan telur.",
+    "createMenu": "2023-10-01T10:00:00Z",
+    "updateMenu": "2023-10-01T10:00:00Z"
+  },
+  {
+    "idMenu": 2,
+    "idKantin": 1,
+    "namaMakanan": "Mie Goreng",
+    "hargaMakanan": 20000,
+    "deskripsiMenu": "Mie goreng dengan sayuran dan bumbu spesial.",
+    "createMenu": "2023-10-01T10:05:00Z",
+    "updateMenu": "2023-10-01T10:05:00Z"
+  },
+  {
+    "idMenu": 3,
+    "idKantin": 1,
+    "namaMakanan": "Sate Ayam",
+    "hargaMakanan": 30000,
+    "deskripsiMenu": "Sate ayam dengan bumbu kacang dan lontong.",
+    "createMenu": "2023-10-01T10:10:00Z",
+    "updateMenu": "2023-10-01T10:10:00Z"
+  },
+  {
+    "idMenu": 4,
+    "idKantin": 1,
+    "namaMakanan": "Gado-Gado",
+    "hargaMakanan": 22000,
+    "deskripsiMenu": "Salad sayuran dengan saus kacang.",
+    "createMenu": "2023-10-01T10:15:00Z",
+    "updateMenu": "2023-10-01T10:15:00Z"
+  },
+  {
+    "idMenu": 5,
+    "idKantin": 1,
+    "namaMakanan": "Rendang Daging",
+    "hargaMakanan": 35000,
+    "deskripsiMenu": "Daging sapi dimasak dengan rempah-rempah khas.",
+    "createMenu": "2023-10-01T10:20:00Z",
+    "updateMenu": "2023-10-01T10:20:00Z"
+  },
+  {
+    "idMenu": 6,
+    "idKantin": 1,
+    "namaMakanan": "Nasi Uduk",
+    "hargaMakanan": 18000,
+    "deskripsiMenu": "Nasi yang dimasak dengan santan, disajikan dengan lauk.",
+    "createMenu": "2023-10-01T10:25:00Z",
+    "updateMenu": "2023-10-01T10:25:00Z"
+  },
+  {
+    "idMenu": 7,
+    "idKantin": 1,
+    "namaMakanan": "Ayam Penyet",
+    "hargaMakanan": 28000,
+    "deskripsiMenu": "Ayam goreng yang dipenyet dengan sambal dan lalapan.",
+    "createMenu": "2023-10-01T10:30:00Z",
+    "updateMenu": "2023-10-01T10:30:00Z"
+  },
+  {
+    "idMenu": 8,
+    "idKantin": 1,
+    "namaMakanan": "Bakso",
+    "hargaMakanan": 15000,
+    "deskripsiMenu": "Bakso daging sapi dengan kuah kaldu.",
+    "createMenu": "2023-10-01T10:35:00Z",
+    "updateMenu": "2023-10-01T10:35:00Z"
+  },
+  {
+    "idMenu": 9,
+    "idKantin": 1,
+    "namaMakanan": "Sop Buntut",
+    "hargaMakanan": 40000,
+    "deskripsiMenu": "Sop buntut dengan sayuran segar.",
+    "createMenu": "2023-10-01T10:40:00Z",
+    "updateMenu": "2023-10-01T10:40:00Z"
+  }
+]

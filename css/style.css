@@ -1,0 +1,1302 @@
+/* Import Google Fonts */
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap);
+
+/* Root Variables */
+:root {
+  --green: #27ae60;
+  --black: #192a56;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* HTML and Body Styles */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+/* Section Styles */
+section {
+  padding: 2rem 9%;
+}
+
+section:nth-child(even) {
+  background: #eee;
+}
+
+/* Home Section Styles */
+.home {
+  padding: 4rem 9%;
+}
+
+/* Subheading and Heading Styles */
+.sub-heading {
+  text-align: center;
+  color: var(--green);
+  font-size: 2rem;
+}
+
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+/* Button Styles */
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #fff;
+  background: var(--black);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+}
+
+.btn:hover {
+  background: var(--green);
+  letter-spacing: 0.1rem;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+}
+
+header .logo {
+  color: var(--black);
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+header .logo i {
+  color: var(--green);
+}
+
+/* Navbar Styles */
+header .navbar a {
+  font-size: 1.7rem;
+  border-radius: 5rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--light-color);
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+  color: #fff;
+  background: var(--green);
+}
+
+/* Icon Styles */
+header .icons i,
+header .icons a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+}
+
+header .icons i:hover,
+header .icons a:hover {
+  color: #fff;
+  background: var(--green);
+  transform: rotate(360deg);
+}
+
+header .icons #menu-bars {
+  display: none;
+}
+
+/* Search Form Styles */
+#search-form {
+  position: fixed;
+  top: -110%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  z-index: 1004;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+#search-form.active {
+  top: 0;
+}
+
+#search-form #search-box {
+  width: 50rem;
+  border-bottom: 0.1rem solid #fff;
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 3rem;
+  text-transform: none;
+  background: none;
+}
+
+#search-form #search-box::placeholder {
+  color: #eee;
+}
+
+#search-form #search-box::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+#search-form label {
+  color: #fff;
+  /* Tambahkan titik koma */
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+#search-form label:hover {
+  color: var(--green);
+}
+
+#search-form #close {
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  top: 2rem;
+  right: 3rem;
+  /* Hapus spasi */
+  font-size: 5rem;
+}
+
+/* Home Slider Styles */
+.home .home-slider {
+  width: 100%;
+  /* Ensure the slider takes full width */
+  overflow: hidden;
+  /* Hide overflow to prevent images from showing outside */
+}
+
+.home .home-slider .slide {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  padding-top: 9rem;
+}
+
+.home .home-slider .slide .content {
+  flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image {
+  flex: 1;
+  max-width: 100%;
+}
+
+.home .home-slider .slide .image img {
+  width: 100%;
+  height: auto;
+}
+
+.home .home-slider .slide .content span {
+  color: var(--green);
+  font-size: 2.5rem;
+}
+
+.home .home-slider .slide .content h3 {
+  color: var(--black);
+  font-size: 7rem;
+}
+
+.home .home-slider .slide .content p {
+  color: var(--light-color);
+  font-size: 2.2rem;
+  padding: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Swiper Pagination Active Style */
+.swiper-pagination-bullet-active {
+  background: var(--green);
+}
+
+/* Kantin Section Styles */
+.kantin {
+  padding: 4rem 9%;
+  margin-top: 2rem;
+}
+
+.kantin .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 2rem;
+  padding-left: 8.5rem;
+}
+
+.kantin .box-container .box {
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 2.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.kantin .box-container .box:hover {
+  background: var(--box-shadow);
+}
+
+/* Icon Styles in Kantin Box */
+.kantin .box-container .box .fa-heart,
+.kantin .box-container .box .fa-location-arrow {
+  position: absolute;
+  top: 1.5rem;
+  background: #eee;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: var(--black);
+}
+
+.kantin .box-container .box .fa-heart:hover,
+.kantin .box-container .box .fa-location-arrow:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.kantin .box-container .box .fa-heart {
+  right: -15rem;
+}
+
+.kantin .box-container .box .fa-location-arrow {
+  left: -15rem;
+}
+
+.kantin .box-container .box:hover .fa-heart {
+  right: 1.5rem;
+}
+
+.kantin .box-container .box:hover .fa-location-arrow {
+  left: 1.5rem;
+}
+
+.kantin .box-container .box img {
+  height: 17rem;
+  margin: 1rem 0;
+  width: 60%;
+}
+
+.kantin .box-container .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+.kantin .box-container .box .stars {
+  padding: 1rem 0;
+}
+
+.kantin .box-container .box .stars i {
+  font-size: 1.7rem;
+  color: var(--green);
+}
+
+/* Rekomendasi Section Styles */
+.rekomendasi {
+  padding: 4rem 9%;
+  margin-top: 2rem;
+  background: #f9f9f9;
+}
+
+.rekomendasi-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.rekomendasi-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  text-align: center;
+}
+
+.rekomendasi-box:hover {
+  background: var(--box-shadow);
+}
+
+.rekomendasi-box img {
+  height: 17rem;
+  margin: 1rem 0;
+  /* Perbaiki kesalahan pengetikan */
+  width: 60%;
+}
+
+.rekomendasi-box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.rekomendasi-box p {
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+.rekomendasi-box span {
+  font-size: 2rem;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.rekomendasi-box .btn {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #fff;
+  background: var(--black);
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+}
+
+/* modal untuk rekomendasi */
+
+/* Cuisine Section Styles */
+.cuisine {
+  padding: 4rem 9%;
+  margin-top: 2rem;
+}
+
+.cuisine .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+}
+
+.cuisine .box-container .box {
+  padding: 0.1rem;
+  background: #fff;
+  border-radius: 50%;
+  /* Mengubah bentuk menjadi lingkaran */
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cuisine .box-container .box img {
+  padding: 0.1rem;
+  height: 15rem;
+  margin: 5rem 0;
+  width: 50%;
+}
+
+.cuisine .box-container .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.cuisine .box-container .box:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Cuisine Details Modal Styles */
+/* Latar belakang modal */
+.cuisine-details-new {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /* Latar belakang gelap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  /* Animasi masuk */
+}
+
+/* Kontainer utama modal */
+.details-container-new {
+  background: #ffffff;
+  width: 60%;
+  max-width: 100px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  animation: scaleUp 0.3s ease-in-out;
+  /* Animasi muncul */
+}
+
+/* Tombol untuk menutup modal */
+.close-cuisine-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ff0000;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-cuisine-modal:hover {
+  color: #d80000;
+  transform: scale(1.2);
+}
+
+/* Header untuk nama cuisine */
+.cuisine-header {
+  margin-bottom: 20px;
+}
+
+.cuisine-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* List menu */
+.menu {
+  margin-top: 20px;
+}
+
+.menu-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--green, #4caf50);
+  font-weight: bold;
+  text-align: left;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item span {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animasi untuk modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* About Section Styles */
+.about {
+  padding: 4rem 9%;
+  /* Padding untuk section about */
+  text-align: center;
+  /* Rata tengah untuk teks */
+  background: #f9f9f9;
+  /* Background untuk section about */
+  margin-top: 2rem;
+  /* Margin atas untuk jarak dari section sebelumnya */
+}
+
+.about .logo {
+  color: var(--black);
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.about .logo i {
+  color: var(--green);
+}
+
+.about .heading {
+  color: var(--black);
+  /* Warna teks untuk heading */
+  font-size: 3rem;
+  /* Ukuran font untuk heading */
+  margin-bottom: 1rem;
+  /* Margin bawah untuk jarak dengan deskripsi */
+}
+
+.about .about-description {
+  color: var(--light-color);
+  /* Warna teks untuk deskripsi */
+  font-size: 1.8rem;
+  /* Ukuran font untuk deskripsi */
+  max-width: 800px;
+  /* Maksimal lebar untuk deskripsi */
+  margin: 0 auto;
+  /* Rata tengah untuk deskripsi */
+  line-height: 1.5;
+  /* Jarak antar baris untuk deskripsi */
+}
+
+/* Kantin Details Modal Styles */
+.kantin-details-new {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /* Latar belakang gelap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  /* Animasi masuk */
+  overflow-y: auto;
+  /* Tambahkan scrollbar jika konten terlalu besar */
+  padding: 20px;
+  /* Tambahkan padding untuk menghindari konten terlalu rapat */
+}
+
+.details-container-new {
+  margin-top: 35rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f5f7fa 100%);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 850px;
+  max-height: 150vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow: hidden;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff4d4d;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.close-modal:hover {
+  background-color: #ff6b6b;
+  transform: rotate(90deg);
+}
+
+.kantin-header-new {
+  background: linear-gradient(to right, #16a062 0%, #14a040 100%);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kantin-header-new::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: skewX(-15deg);
+  z-index: 1;
+}
+
+.kantin-img-new {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.kantin-title-new {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.kantin-description-new {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.rating-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+  color: white;
+}
+
+.stars-new {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.stars-new i {
+  color: #ffd700;
+}
+
+.location-link-new {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.location-link-new:hover {
+  color: #e0e0e0;
+}
+
+.kantin-body-new {
+  padding: 30px 20px;
+  background-color: white;
+}
+
+.menu-list-new {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.menu-item-new {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.menu-item-new:hover {
+  transform: translateY(-10px);
+}
+
+.menu-img-new {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.menu-price {
+  color: #2575fc;
+  font-weight: 700;
+}
+
+.review-form-new {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #35a04a 0%, #186c3b 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .details-container-new {
+    width: 95%;
+    margin: 0 10px;
+  }
+
+  .rating-location {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .kantin-img-new {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Recommendation Details Modal Styles */
+.recommendation-details {
+  position: fixed;
+  /* Pastikan modal berada di posisi tetap */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /* Latar belakang semi-transparan */
+  display: none;
+  /* Sembunyikan secara default */
+  justify-content: center;
+  /* Pusatkan konten secara horizontal */
+  align-items: center;
+  /* Pusatkan konten secara vertikal */
+  z-index: 1005;
+  /* Pastikan di atas elemen lain */
+}
+
+/* Details Container in Recommendation Modal */
+.details-container {
+  position: relative;
+  /* Untuk mengatur posisi relatif */
+  background: white;
+  /* Latar belakang putih untuk konten modal */
+  padding: 2rem;
+  /* Ruang di dalam modal */
+  border-radius: 12px;
+  /* Sudut yang lebih halus */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  /* Bayangan untuk efek mengambang */
+  text-align: center;
+  /* Rata tengah untuk teks */
+  max-width: 600px;
+  /* Lebar maksimum modal */
+  width: 90%;
+  /* Lebar responsif */
+}
+
+/* Close Recommendation Details Button Styles */
+#close-recommendation-details {
+  position: absolute;
+  /* Ubah menjadi absolute */
+  top: 1rem;
+  /* Jarak dari atas kontainer */
+  right: 1rem;
+  /* Jarak dari kanan kontainer */
+  cursor: pointer;
+  /* Kursor pointer untuk tombol tutup */
+  font-size: 1.5rem;
+  /* Ukuran font untuk ikon tutup */
+  color: #ff0000;
+  /* Warna untuk ikon tutup */
+}
+
+/* Likes Section Styles */
+.likes {
+  padding: 4rem 9%;
+  background: #f9f9f9;
+  /* Latar belakang untuk section likes */
+}
+
+.likes .sub-heading,
+.likes .heading {
+  text-align: center;
+  color: var(--black);
+}
+
+/* Likes Box Container */
+.likes .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual Like Box Styles */
+.likes .box {
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 2.5rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  overflow: hidden;
+  /* Menyembunyikan bagian gambar yang keluar dari kontainer */
+}
+
+.likes .box img {
+  height: 15rem;
+  /* Atur tinggi gambar */
+  width: 100%;
+  /* Gambar responsif */
+  object-fit: cover;
+  /* Memastikan gambar terpotong dengan baik */
+  border-radius: 1.5rem;
+  /* Menambahkan sudut melengkung pada gambar */
+  display: block;
+  /* Menghilangkan spasi di bawah gambar */
+}
+
+.likes .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+/* Star Rating Styles */
+.likes .box .stars {
+  padding: 1rem 0;
+}
+
+.likes .box .stars i {
+  font-size: 1.7rem;
+  color: var(--green);
+}
+
+/* Liked Menu Section Styles */
+.liked-menu {
+  padding: 4rem 9%;
+}
+
+/* Liked Menu Container */
+.liked-menu .menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* Jarak antar item menu */
+}
+
+/* Liked Menu Item Styles */
+.liked-menu .menu-item {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  /* Tambahkan border yang benar */
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Liked Menu Item Image Styles */
+.liked-menu .menu-item img {
+  max-height: 5rem;
+  /* Atur tinggi maksimum gambar menu */
+  width: auto;
+  /* Biarkan lebar otomatis */
+  object-fit: contain;
+  /* Memastikan gambar tetap dalam proporsi */
+  margin-right: 1rem;
+  /* Jarak antara gambar dan teks */
+  border-radius: 5px;
+  /* Menambahkan sudut melengkung pada gambar menu */
+}
+
+/* Liked Menu Item Title Styles */
+.liked-menu .menu-item h3 {
+  color: var(--black);
+  font-size: 2rem;
+}
+
+/* Liked Menu Item Price Styles */
+.liked-menu .menu-item span {
+  font-size: 1.5rem;
+  color: var(--green);
+}
+
+/* Liked Menu Item Button Styles */
+.liked-menu .menu-item .btn {
+  background: var(--black);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.liked-menu .menu-item .btn:hover {
+  background: var(--green);
+}
+
+/* Latar belakang modal */
+.menu-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  /* Latar belakang gelap */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Konten modal */
+.modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  animation: scaleUp 0.3s ease-in-out;
+  /* Animasi muncul */
+}
+
+/* Tombol untuk menutup modal */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ff0000;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #d80000;
+  transform: scale(1.2);
+}
+
+/* Header modal */
+.modal-header {
+  margin-bottom: 15px;
+}
+
+#menu-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Gambar menu */
+.menu-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Deskripsi menu */
+#menu-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Harga menu */
+.menu-price {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--green, #4caf50);
+  margin-bottom: 20px;
+}
+
+/* Tombol di footer modal */
+.modal-footer .btn {
+  padding: 10px 20px;
+  background-color: var(--green, #4caf50);
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+  background-color: #388e3c;
+}
+
+/* Animasi untuk modal */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+    /* Mengurangi ukuran font untuk perangkat kecil */
+  }
+
+  header {
+    padding: 1rem 2rem;
+    /* Mengurangi padding header */
+  }
+
+  section {
+    padding: 4rem 9%;
+    /* Mengatur padding section */
+  }
+}
+
+/* Adjustments for Kantin Box Container */
+.kantin .box-container {
+  margin-left: -9rem;
+  /* Mengatur margin kiri untuk box container */
+}
+
+@media (max-width: 768px) {
+  header .icons #menu-bars {
+    display: inline-block;
+    /* Menampilkan menu bars pada perangkat kecil */
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    /* Menyembunyikan navbar */
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    /* Menampilkan navbar */
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: #eee;
+    /* Background untuk navbar link */
+  }
+
+  #search-form #search-box {
+    width: 90%;
+    /* Mengatur lebar search box */
+    margin: 0 1rem;
+    /* Margin untuk search box */
+  }
+
+  .home .home-slider .slide .content h3 {
+    font-size: 5rem;
+    /* Mengatur ukuran font untuk judul di slider */
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 50%;
+    /* Mengurangi ukuran font lebih lanjut untuk perangkat kecil */
+  }
+}
+
+.stars-new {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.stars-new input {
+  display: none;
+}
+
+.stars-new label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.stars-new input:checked ~ label,
+.stars-new input:hover ~ label {
+  color: #ff0;
+}
