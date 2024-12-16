@@ -14,7 +14,7 @@
 ---
 
 ## Deskripsi Proyek
-UnandEats adalah sebuah platform berbasis web yang bertujuan untuk memfasilitasi pengguna dalam melakukan pemesanan makanan. Proyek ini dikembangkan menggunakan teknologi **PHP** dan database **MySQL**.
+UnandEats adalah sebuah platform berbasis web yang bertujuan untuk memfasilitasi mahasiswa terutama maba dalam melakukan pencarian menu yang tersedia di seluruh kantin unand. Proyek ini dikembangkan menggunakan teknologi **PHP** dan database **MySQL**.
 
 ---
 
