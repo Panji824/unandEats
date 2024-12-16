@@ -42,6 +42,7 @@ UnandEats adalah sebuah platform berbasis web yang bertujuan untuk memfasilitasi
 
 4. **Akses Web**:
    - Buka browser dan akses halaman utama: `index.php`.
+   - akses koneksi database ada pada file: `function.php`.
 
 ---
 
