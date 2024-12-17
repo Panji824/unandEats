@@ -1,5 +1,6 @@
 # UnandEats
 
+
 ## Kelompok 2 RPL
 ### Project Team
 - **Project Manager**: Aditya Aulia Rahman
@@ -32,7 +33,7 @@ UnandEats adalah sebuah platform berbasis web yang bertujuan untuk memfasilitasi
    - Import file database yang tersedia di folder `database`.
 
 3. **Konfigurasi Koneksi Database**:
-   - Pastikan file konfigurasi database (misalnya `config.php`) sudah sesuai:
+   - Pastikan file konfigurasi database (pada file `function.php`) sudah sesuai:
      ```php
      $host = "localhost";
      $username = "root"; // Sesuaikan dengan username MySQL Anda
@@ -42,7 +43,7 @@ UnandEats adalah sebuah platform berbasis web yang bertujuan untuk memfasilitasi
 
 4. **Akses Web**:
    - Buka browser dan akses halaman utama: `index.php`.
-   - akses koneksi database ada pada file: `function.php`.
+
 
 ---
 
