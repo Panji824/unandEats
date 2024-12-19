@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 16, 2024 at 04:58 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: mysql5035.site4now.net
+-- Generation Time: Dec 18, 2024 at 11:57 PM
+-- Server version: 5.6.26-log
+-- PHP Version: 8.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_kantin`
+-- Database: `db_ab0a78_kantin`
 --
 
 -- --------------------------------------------------------
@@ -29,24 +29,49 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL,
-  `id_kantin` int(11) NOT NULL,
+  `id_kantin` int(11) DEFAULT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `role` enum('admin','super_admin') DEFAULT 'admin'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_admin`, `id_kantin`, `username`, `password`, `email`, `created_at`) VALUES
-(13, 1, 'admin_kantin_bunda', 'password123', 'admin_bunda@example.com', '2024-12-16 12:25:25'),
-(14, 2, 'admin_kantin_nice', 'password123', 'admin_nice@example.com', '2024-12-16 12:25:25'),
-(15, 3, 'admin_kantin_raziq', 'password123', 'admin_raziq@example.com', '2024-12-16 12:25:25'),
-(16, 4, 'admin_kantin_queen', 'password123', 'admin_queen@example.com', '2024-12-16 12:25:25'),
-(17, 5, 'admin_kantin_galaxy', 'password123', 'admin_galaxy@example.com', '2024-12-16 12:25:25'),
-(18, 6, 'admin_kantin_harmoni', 'password123', 'admin_harmoni@example.com', '2024-12-16 12:25:25');
+INSERT INTO `admin` (`id_admin`, `id_kantin`, `username`, `password`, `email`, `created_at`, `role`) VALUES
+(7, NULL, 'superadmin', 'superadmin1', 'superadmin@example.com', '2024-12-18 10:16:01', 'super_admin'),
+(13, 1, 'admin_kantin_bunda', 'password123', 'admin_bunda@example.com', '2024-12-16 12:25:25', 'admin'),
+(14, 2, 'admin_kantin_nice', 'password123', 'admin_nice@example.com', '2024-12-16 12:25:25', 'admin'),
+(15, 3, 'admin_kantin_raziq', 'password123', 'admin_raziq@example.com', '2024-12-16 12:25:25', 'admin'),
+(16, 4, 'admin_kantin_queen', 'password123', 'admin_queen@example.com', '2024-12-16 12:25:25', 'admin'),
+(17, 5, 'admin_kantin_galaxy', 'password123', 'admin_galaxy@example.com', '2024-12-16 12:25:25', 'admin'),
+(18, 6, 'admin_kantin_harmoni', 'password123', 'admin_harmoni@example.com', '2024-12-16 12:25:25', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorit`
+--
+
+CREATE TABLE `favorit` (
+  `id_like` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_kantin` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `favorit`
+--
+
+INSERT INTO `favorit` (`id_like`, `id_user`, `id_kantin`, `created_at`) VALUES
+(9, 1, 1, '2024-12-18 12:52:53'),
+(13, 1, 2, '2024-12-18 13:36:27'),
+(14, 1, 6, '2024-12-18 15:35:56'),
+(15, 1, 3, '2024-12-18 17:28:42');
 
 -- --------------------------------------------------------
 
@@ -58,10 +83,10 @@ CREATE TABLE `kantin` (
   `id_kantin` int(11) NOT NULL,
   `nama_kantin` varchar(100) NOT NULL,
   `lokasi` text NOT NULL,
-  `deskripsi` text DEFAULT NULL,
+  `deskripsi` text,
   `rating` decimal(2,1) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kantin`
@@ -87,17 +112,17 @@ CREATE TABLE `menu_makanan` (
   `nama_menu` varchar(100) NOT NULL,
   `harga` decimal(10,2) NOT NULL,
   `kategori` varchar(50) DEFAULT NULL,
-  `deskripsi` text DEFAULT NULL,
+  `deskripsi` text,
   `gambar_menu` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `menu_makanan`
 --
 
 INSERT INTO `menu_makanan` (`id_menu`, `id_kantin`, `nama_menu`, `harga`, `kategori`, `deskripsi`, `gambar_menu`, `created_at`) VALUES
-(1, 1, 'burger bunda', 40000.00, 'fastfood', 'saingan utama big mac bos (harganya doang)', 'images/menu/fastfood1_1.png', '2024-12-16 12:25:44'),
+(1, 1, 'burger bunda', 40000.00, 'fastfood', 'harganya sesuai dengan rasa', 'images/menu/fastfood1_1.png', '2024-12-16 12:25:44'),
 (2, 1, 'Ayam Gulai Bunda', 20000.00, 'ayam', 'Menu ayam gulai khas Kantin Bunda', 'images/menu/ayam1_1.png', '2024-12-16 12:25:44'),
 (3, 1, 'Ikan Bakar Bunda', 30000.00, 'ikan', 'Menu ikan bakar spesial Kantin Bunda', 'images/menu/ikan1_1.png', '2024-12-16 12:25:44'),
 (4, 1, 'Es Teh Manis Bunda', 15000.00, 'minuman', 'Minuman segar khas Kantin Bunda', 'images/menu/minuman1_1.png', '2024-12-16 12:25:44'),
@@ -144,10 +169,10 @@ CREATE TABLE `ulasan_kantin` (
   `id_ulasan` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_kantin` int(11) NOT NULL,
-  `rating` int(11) DEFAULT NULL CHECK (`rating` between 1 and 5),
-  `komentar` text DEFAULT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `rating` int(11) DEFAULT NULL,
+  `komentar` text,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ulasan_kantin`
@@ -175,7 +200,9 @@ INSERT INTO `ulasan_kantin` (`id_ulasan`, `id_user`, `id_kantin`, `rating`, `kom
 (19, 3, 6, 4, 'Beberapa menu kadang habis terlalu cepat.', '2024-12-16 14:44:13'),
 (24, 1, 1, 5, 'ssfdsfds', '2024-12-16 19:43:35'),
 (25, 1, 1, 2, 'burger mahal doang, enak kaga bjir', '2024-12-16 19:44:13'),
-(26, 1, 2, 3, 'kantin mahal gamnatap', '2024-12-16 20:12:54');
+(26, 1, 2, 3, 'kantin mahal gamnatap', '2024-12-16 20:12:54'),
+(27, 1, 1, 3, 'teh nya mahal kali bun', '2024-12-18 09:59:49'),
+(28, 1, 1, 5, 'mantap', '2024-12-18 21:15:39');
 
 -- --------------------------------------------------------
 
@@ -188,8 +215,8 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -213,6 +240,14 @@ INSERT INTO `users` (`id_user`, `username`, `password`, `email`, `created_at`) V
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD KEY `admin_ibfk_1` (`id_kantin`);
+
+--
+-- Indexes for table `favorit`
+--
+ALTER TABLE `favorit`
+  ADD PRIMARY KEY (`id_like`),
+  ADD UNIQUE KEY `id_user` (`id_user`,`id_kantin`),
+  ADD KEY `id_kantin` (`id_kantin`);
 
 --
 -- Indexes for table `kantin`
@@ -252,6 +287,12 @@ ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT for table `favorit`
+--
+ALTER TABLE `favorit`
+  MODIFY `id_like` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `kantin`
 --
 ALTER TABLE `kantin`
@@ -261,13 +302,13 @@ ALTER TABLE `kantin`
 -- AUTO_INCREMENT for table `menu_makanan`
 --
 ALTER TABLE `menu_makanan`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `ulasan_kantin`
 --
 ALTER TABLE `ulasan_kantin`
-  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -284,6 +325,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id_kantin`) REFERENCES `kantin` (`id_kantin`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `favorit`
+--
+ALTER TABLE `favorit`
+  ADD CONSTRAINT `favorit_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `favorit_ibfk_2` FOREIGN KEY (`id_kantin`) REFERENCES `kantin` (`id_kantin`);
 
 --
 -- Constraints for table `menu_makanan`
